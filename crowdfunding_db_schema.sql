@@ -1,10 +1,10 @@
 CREATE TABLE category (
-	cat_ids VARCHAR(10) PRIMARY KEY,
+	category_id VARCHAR(10) PRIMARY KEY,
 	category VARCHAR(20) NOT NULL
 );
 
 CREATE TABLE subcategory (
-	scat_ids VARCHAR(10) PRIMARY KEY,
+	subcategory_id VARCHAR(10) PRIMARY KEY,
 	subcategory VARCHAR(30) NOT NULL
 );
 
@@ -31,8 +31,8 @@ CREATE TABLE campaign (
 	category_id VARCHAR(10),
 	subcategory_id VARCHAR(10),
 	FOREIGN KEY (contact_id) REFERENCES contacts(contact_id),
-	FOREIGN KEY (category_id) REFERENCES category(cat_ids),
-	FOREIGN KEY (subcategory_id) REFERENCES subcategory(scat_ids)
+	FOREIGN KEY (category_id) REFERENCES category(category_id),
+	FOREIGN KEY (subcategory_id) REFERENCES subcategory(subcategory_id)
 )
 
 SELECT * FROM category;
